@@ -17,9 +17,9 @@
       %table(width='100%' border='0')
         %tr(valign='middle')
           %td
-            %h1 Header
+            %h1 Phodash
           %td(align='right')
-            %img{:src=> '/images/logo.png'}
+            -# %img{:src=> '/images/logo.png'}
 
     %hr
     #content
@@ -29,8 +29,8 @@
     #footer
       %table(width='100%' border='0' cellspacing='0')
         %tr
-          - time = Time.now.strftime("%Y-%m-%d %H:%M")
-          %td(align='left') Report generated at #{time}
+          -# - time = Time.now.strftime("%Y-%m-%d %H:%M")
+          -# %td(align='left') Report generated in #{elapsed} seconds.
           %td(align='right')
             &copy; #{year}
             %a(href='mailto:oddbjorn@tricknology.org')
