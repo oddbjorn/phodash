@@ -1,8 +1,16 @@
 - FlickRaw.api_key="b172842dbd43230e877cdd6a715a3135"
 - FlickRaw.shared_secret="8a380b2f28e30fe2"
 
+- start = Time.now()
+
 - list = flickr.interestingness.getList
-- list.each do |l|
-  - info    = flickr.photos.getInfo(:photo_id => l.id, :secret => l.secret)
-  - url     = FlickRaw.url_t(info)
-  %img(src='#{url}')
+- list.first do |l|
+  %hr
+  = l.id
+  - i = flickr.photos.getInfo(:photo_id => l.id) # , :secret => l.secret)
+  = i.dates.taken
+  -# - url     = FlickRaw.url_t(info)
+  -# %img(src='#{url}')
+
+- end = Time.now()
+= elapsed = end - start
