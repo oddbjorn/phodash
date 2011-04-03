@@ -1,2 +1,4 @@
 sinatra
 flickraw-cached
+haml
+pp
