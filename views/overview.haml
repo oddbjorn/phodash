@@ -2,10 +2,12 @@
 - FlickRaw.shared_secret="8a380b2f28e30fe2"
 - start = Time.now()
 
-- list = flickr.interestingness.getList(:extras => 'url_sq')
+-# description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags,
+-# machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url, url_z, url_l, url_o
+- list = flickr.interestingness.getList(:extras => 'url_sq,description,owner', :per_page => 50)
 - list.each do |l|
-  %a(href='#{l.url_sq}')
-    %img(src='#{l.url_sq}')
+  %a(href='http://www.flickr.com/photos/#{l.owner}/#{l.id}' title='#{l.title}')
+    %img(src='#{l.url_sq}' width='75' height='75')
 
 %p This application is an exploration of the Flickr API. Images shown selected from the
 %a(href='http://www.flickr.com/explore/interesting/')
