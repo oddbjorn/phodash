@@ -6,9 +6,10 @@ FlickRaw.shared_secret="8a380b2f28e30fe2"
 
 get '/' do
   list = flickr.photos.getRecent
-  id = list[0].id
-  secret = list[0].secret
-  info = flickr.photos.getInfo :photo_id => id, :secret => secret
-  exif = flickr.photos.getExif :photo_id => id, :secret => secret
-  p exif
+  puts list
+#  id = list[0].id
+#  secret = list[0].secret
+#  info = flickr.photos.getInfo :photo_id => id, :secret => secret
+#  exif = flickr.photos.getExif :photo_id => id, :secret => secret
+#  p exif
 end
