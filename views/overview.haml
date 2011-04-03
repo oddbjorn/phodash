@@ -1,0 +1,8 @@
+- FlickRaw.api_key="b172842dbd43230e877cdd6a715a3135"
+- FlickRaw.shared_secret="8a380b2f28e30fe2"
+
+- list = flickr.interestingness.getList
+- list.each do |l|
+  - info    = flickr.photos.getInfo(:photo_id => l.id, :secret => l.secret)
+  - url     = FlickRaw.url_t(info)
+  %img(src='#{url}')

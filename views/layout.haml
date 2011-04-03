@@ -1,0 +1,36 @@
+!!!
+
+- time = Time.new
+- year = time.year
+
+%html
+  %head
+    %title Title
+
+    %script{:type => 'text/javascript', :src  => '/js/jquery.min.js'}
+    %script{:type => 'text/javascript', :src  => '/js/jquery-ui.min.js'}
+
+    %link(rel="stylesheet" href="/style.css")
+
+  %body
+    #header
+      %table(width='100%' border='0')
+        %tr(valign='middle')
+          %td
+            %h1 Header
+          %td(align='right')
+            %img{:src=> '/images/logo.png'}
+
+    %hr
+    #content
+      =yield
+    %hr
+
+    #footer
+      %table(width='100%' border='0' cellspacing='0')
+        %tr
+          - time = Time.now.strftime("%Y-%m-%d %H:%M")
+          %td(align='left') Report generated at #{time}
+          %td(align='right')
+            &copy; #{year}
+            %a(href='mailto:oddbjorn@tricknology.org')
